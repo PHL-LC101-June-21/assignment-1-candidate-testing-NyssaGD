@@ -6,28 +6,36 @@ const input = require('readline-sync');
 let candidateName;
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question;
-let correctAnswer;
+let correctAnswer = "Sally Ride";
 let candidateAnswer;
 let questions;
 let correctAnswers;
 let candidateAnswers;
 
 
-function askForName() {
+function askForName(candidateName) {
   // TODO 1.1b: Ask for candidate's name //
-
+ candidateName = input.question ("What is your name? ");
+  // TODO 1.1c: Say Hello to the candidate //
+  console.log("Hello", candidateName)
 }
-
+//I DID IT!
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+    // 1) Who was the first American woman in space?
 
+candidateAnswer = input.question ("Who was the first American woman in space? ")
 
 }
 
-function gradeQuiz(candidateAnswers) {
+function gradeQuiz() {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+if (candidateAnswer == "Sally Ride"){
+  console.log("You did it!")
+} else{
+  console.log("I'm sorry, that is incorrect. Check your spelling and retry!")
+}
 
   let grade;
   
@@ -38,7 +46,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  
+
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
